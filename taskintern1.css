@@ -1,0 +1,140 @@
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Font */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 60px; /* Adjust for fixed navbar */
+}
+
+/* Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+#navbar ul {
+    list-style-type: none;
+    display: flex;
+}
+
+#navbar ul li {
+    margin-right: 20px;
+}
+
+#navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#navbar button {
+    background-color: #333;
+    color: white;
+    font-size: 25px;
+    border: none;
+    display: none;
+    cursor: pointer;
+}
+
+/* Layout */
+#main-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px; /* To prevent content from hiding behind the fixed navbar */
+}
+
+/* Left Menu */
+#left-menu {
+    width: 20%;
+    background-color: #e0e0e0;
+    padding: 10px;
+    display: block;
+}
+
+#left-menu ul {
+    list-style-type: none;
+}
+
+#left-menu ul li {
+    margin-bottom: 10px;
+}
+
+#left-menu ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Content Area */
+#content-area {
+    width: 55%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Panel */
+#right-panel {
+    width: 20%;
+    background-color: #e0e0e0;
+    padding: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+    #navbar button {
+        display: block;
+    }
+
+    #main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #left-menu {
+        width: 100%;
+        display: none;
+    }
+
+    #left-menu.collapsed {
+        display: block;
+    }
+
+    #content-area {
+        width: 80%;
+    }
+
+    #right-panel {
+        width: 100%;
+    }
+}
+
+/* Collapsible Menu */
+#left-menu.collapsed {
+    display: block;
+}
